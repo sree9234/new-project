@@ -1,0 +1,76 @@
+
+//Flames
+package baseforbasic;
+public class FlamesDemo
+{
+public static void main(String[] args) 
+{
+String s1=new String("may");
+String s2=new String("jay");
+char[] sb1=s1.toCharArray();
+char[] sb2=s2.toCharArray();
+
+System.out.println(sb1);
+System.out.println(sb2);
+
+for(int i=0;i<sb1.length;i++)
+{
+	for(int j=0;j<sb2.length;j++)
+	{
+		
+		if(sb1[i]==sb2[j])
+		{
+			sb1[i]='*';
+			sb2[j]='*';
+			break;
+		}
+		
+	}
+}
+	String ss1=new String(sb1);
+	String ss2=new String(sb2);
+	ss1=ss1.replace("*", "");
+	ss2=ss2.replace("*", "");
+	
+
+
+System.out.println("After Removing....");
+System.out.println(ss1);
+System.out.println(ss2);
+
+int n=0;
+
+int tot=ss1.length()+ss2.length();
+System.out.println("Total Count is :"+tot);
+
+String s3=new String("flames");
+
+for(int i=6;i>=2;i--)
+{
+	if(tot>i)
+	{
+		n=tot-i;		
+	}
+	else
+	{
+		n=tot;
+	}
+
+	while(n>i)
+	{
+		n=n-5;
+	}
+	s3=s3.substring(n,s3.length())+(s3.substring(0,n-1));
+}
+
+switch(s3.charAt(0))
+{
+case 'f':System.out.println("Friends");break;
+case 'l':System.out.println("Lovers");break;
+case 'a':System.out.println("Affections");break;
+case 'm':System.out.println("Married");break;
+case 'e':System.out.println("Enimes");break;
+case 's':System.out.println("Siblings");break;
+}
+}
+}
